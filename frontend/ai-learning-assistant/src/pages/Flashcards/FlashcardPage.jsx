@@ -35,8 +35,7 @@ const FlashcardPage = () => {
       const response=await flashcardService.getFlashcardsForDocument(
         documentId
       )
-       console.log("FULL RESPONSE:", response)
-    console.log("RESPONSE.DATA:", response.data)
+     
    
       setFlashcardSets(response.data[0]) //Your document has only one flashcard set OR You only want to display the first one right now
       setFlashcards(response.data[0]?.cards || [])

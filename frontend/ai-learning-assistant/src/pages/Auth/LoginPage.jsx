@@ -21,10 +21,9 @@ const LoginPage = () => {
     setError('');
     setLoading(true);
     try{
-      const {token,user}=await authService.login(email,password);  //authService.login() backend API call karta hai...Agar email/password sahi hai to backend reply karega:
-      console.log("TOKEN:", token);
-      console.log("USER:", user);
-      login(user,token);  //this function is the AuthContext Login function..tis login function stores the token and user in localStorage and user ko login kra deta hai
+      const {token,user}=await authService.login(email,password);  
+      
+      login(user,token); 
       toast.success('Logged in successfully')
       navigate('/dashboard');
     }catch(err){
@@ -156,5 +155,3 @@ const LoginPage = () => {
 }
 
 export default LoginPage
-
-/

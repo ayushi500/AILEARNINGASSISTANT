@@ -39,19 +39,19 @@ const DocumentListPage = () => {
   }
 
   useEffect(()=>{
-    fetchDocuments()   //state change hone pe page render hota hai,and jaise hi page render hua,waise hi useEffect call ho jaayega?
+    fetchDocuments()   
   },[])
 
-  const handleFileChange=(e)=>{  //Yeh function tab chalata hai jab user file select karta hai.
-    console.log(e.target)   //User file select karta hai  =>  e.target.files[0] → first selected file => Store in uploadFile 
+  const handleFileChange=(e)=>{  
+       
     const file=e.target.files[0];
     if(file){
       setUploadFile(file)
-      setUploadTitle(file.name.replace(/\.[^/.]+$/,""))  //File ka extension hata do  "notes.pdf" → "notes
+      setUploadTitle(file.name.replace(/\.[^/.]+$/,""))  
     }
   }
 
-  const handleUpload=async (e) =>{  //Yeh function tab chalata hai jab user Upload / Submit button dabata hai.
+  const handleUpload=async (e) =>{  
     e.preventDefault();
     if(!uploadFile || !uploadTitle){
       toast.error("Please provide a title and select a file")
@@ -77,13 +77,13 @@ const DocumentListPage = () => {
     }
   }
 
-  const handleDeleteRequest=(doc)=>{  //konsi file delete krni hai,use identify krne ke liye
+  const handleDeleteRequest=(doc)=>{  
     setSelectedDoc(doc)
     setIsDeleteModalOpen(true)
   }
 
-  const handleConfirmDelete=async ()=>{  //file delete krne ke liye
-    if(!selectedDoc) return;  //selectedDoc are those documents which are selected for deleting
+  const handleConfirmDelete=async ()=>{ 
+    if(!selectedDoc) return;  
 
     setDeleting(true);
     try{
@@ -91,7 +91,7 @@ const DocumentListPage = () => {
       toast.success(`'${selectedDoc.title}' deleted`)
       setIsDeleteModalOpen(false)
       setSelectedDoc(null)
-      setDocuments(documents.filter((d)=>d._id != selectedDoc._id))  //sab documents rakh do...except jo delete hua
+      setDocuments(documents.filter((d)=>d._id != selectedDoc._id))  
     }catch(error){
       toast.error(error.message || "Failed to delete document")
     }finally{
