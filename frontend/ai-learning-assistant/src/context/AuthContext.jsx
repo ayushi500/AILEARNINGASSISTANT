@@ -21,13 +21,12 @@ export const AuthProvider=({children})=>{
 
 useEffect(()=>{
   checkAuthStatus();
-},[]);  //it means kewal ek baar hi jb page render hoga,to user ki authentication check ki jaayegi
+},[]); 
 
 const checkAuthStatus=async()=>{
   try{
     const token=localStorage.getItem("token");
-    const userStr=localStorage.getItem('user')   //local storage me strings store hoti hain and JSON me object hote hain
-
+    const userStr=localStorage.getItem('user')  
     if(userStr && token){
       const userData=JSON.parse(userStr);
       setUser(userData);
@@ -41,8 +40,8 @@ const checkAuthStatus=async()=>{
   }
 }
 
-//user ko login krne ke liye function
-const login=(userData,token)=>{   //agr user ke pass token hai,to ye user ko login kra dega
+
+const login=(userData,token)=>{  
   localStorage.setItem('token',token);
   localStorage.setItem('user',JSON.stringify(userData));
 
@@ -50,7 +49,7 @@ const login=(userData,token)=>{   //agr user ke pass token hai,to ye user ko log
   setIsAuthenticated(true)
 }
 
-//user ko logout krne ke liye function
+
 const logout=()=>{
   localStorage.removeItem('token');
   localStorage.removeItem('user')
@@ -60,7 +59,7 @@ const logout=()=>{
   window.location.href='/'
 }
 
-//user ko update krne ke liye function
+
 const updateUser=(updatedUser)=>{
   const newUserData={...user,...updatedUser}
   localStorage.setItem('user',JSON.stringify(newUserData))

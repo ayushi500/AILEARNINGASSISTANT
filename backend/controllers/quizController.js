@@ -94,7 +94,7 @@ export const submitQuiz=async(req,res,next)=>{
       answers.forEach(answer=>{
         const {questionIndex, selectedAnswer}=answer;
 
-        if(questionIndex < quiz.questions.length){   //Invalid index se bchne ke liye and out of bound access nhi ho
+        if(questionIndex < quiz.questions.length){  
             const question=quiz.questions[questionIndex]
             const isCorrect=selectedAnswer===question.correctAnswer
              

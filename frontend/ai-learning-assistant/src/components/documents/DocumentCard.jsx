@@ -19,8 +19,8 @@ const formatFileSize=(bytes)=>{
     return `${size.toFixed(1)}  ${units[unitIndex]}`;
 }
 
-const DocumentCard = ({     //document → jisme file ka data hota hai (name, id, size, etc.)
-    document, onDelete     //onDelete → function jo delete karne par chalega
+const DocumentCard = ({     
+    document, onDelete     
 }) => {
 
     const navigate=useNavigate();
@@ -101,63 +101,3 @@ const DocumentCard = ({     //document → jisme file ka data hota hai (name, id
 
 export default DocumentCard
 
-
-/**  Example
- * const DocumentListPage = () => {
-
-  const [documents, setDocuments] = useState([]);
-
-  const handleDeleteRequest = (doc) => {
-      console.log("Ye delete hoga:", doc);
-
-      // yahin API call hoti hai
-      // yahin state update hoti hai
-  }
-
-  return (
-    <>
-      {documents.map(doc => (
-        <DocumentCard 
-           key={doc._id}
-           document={doc}
-           onDelete={handleDeleteRequest}   // 👈 yahi parent hai
-        />
-      ))}
-    </>
-  )
-}
-
-
-
-
-
-1️⃣ User clicks delete icon on DocumentCard
-   ↓
-2️⃣ handleDeleteRequest(doc)
-   ↓
-3️⃣ selectedDoc set
-4️⃣ Delete modal open
-   ↓
-5️⃣ User clicks "Delete" in modal
-   ↓
-6️⃣ handleConfirmDelete()
-   ↓
-7️⃣ API call → state update → UI refresh
-
-
-
->
-📌 handleDeleteRequest Iska kaam:
-Kaunsa document delete karna hai → store karna
-Confirmation modal open karna
-
-
-
-//MOMENT
-moment(document.createdAt).fromNow()
-2025-02-01T10:00:00Z
-convert hoga:
-"2 hours ago"
-"5 days ago"
-"a month ago"
- */
