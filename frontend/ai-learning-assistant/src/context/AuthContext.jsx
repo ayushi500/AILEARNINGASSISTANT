@@ -6,8 +6,8 @@ const AuthContext=createContext();
 export const useAuth=()=>{
         const context=useContext(AuthContext);
         if(!context){
-          throw new Error("useAuth must be used within an AuthProvider")  //🔴 Ye error kab aayega?
-//Jab tum useAuth() ko aise component me use kr loge jo AuthProvider se wrap nahi hua hai.
+          throw new Error("useAuth must be used within an AuthProvider")  
+
  }
  return context
 }

@@ -75,48 +75,7 @@ const quizSchema=new mongoose.Schema({
         timestamps:true
      }
 )
-//quiz generated only when user is present and the document is present
-//Index for faster queries
-quizSchema.index({userId:1,documentId:1});  //It is the optimisation for =>Quiz.find({ userId, documentId })
+
+quizSchema.index({userId:1,documentId:1});  
 const Quiz=mongoose.model('Quiz',quizSchema)
 export default Quiz
-
-// An index is mainly used for optimization / performance improvement.
-
-// 🧠 Why?
-
-// Without an index:
-
-// MongoDB must scan every document in the collection
-
-// This is slow (called collection scan)
-
-// With an index:
-
-// MongoDB directly jumps to matching records
-
-// Much faster (called index scan)
-
-// ⚡ Real-Life Example
-
-// Like a book:
-
-// Without index → read every page to find a topic ❌
-// With index → go to index page → directly jump to page ✔
-
-// quizSchema.index({ userId: 1, documentId: 1 });
-// It means:
-// 1️⃣ MongoDB first searches by userId
-// → “Find all quizzes belonging to this user”
-
-// 2️⃣ Then inside that user’s data, it narrows to documentId
-// → “From those quizzes, find the one related to this document”
-
-// 🧠 Why this order is useful?
-// Because:
-
-// One user can create multiple documents
-
-// Each document can have its own quiz
-
-// We frequently query like:

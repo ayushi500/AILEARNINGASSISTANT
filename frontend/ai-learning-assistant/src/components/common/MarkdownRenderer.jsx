@@ -50,15 +50,3 @@ const MarkdownRenderer = ({content}) => {
 }
 
 export default MarkdownRenderer
-
-//Markdown ka # Ant → ReactMarkdown → tumhara custom <h1>
-//it means agr **Ant** aa rha hoga to wo <h1>Ant </h1>se replace ho jayega
-/**
- * p  → <p>
-a  → <a>
-ul → <ul>
-li → <li>
-strong → <strong>
-em → <em>
-
- */

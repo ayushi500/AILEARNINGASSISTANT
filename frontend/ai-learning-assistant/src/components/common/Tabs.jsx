@@ -48,25 +48,3 @@ const Tabs = ({tabs,activeTab,setActiveTab}) => {
 
 export default Tabs
 
-
-/**
-tab.name = us tab ka naam (e.g., "Chat", "Flashcards", "Quizzes")
-setActiveTab(tab.name) → activeTab ko update kar deta hai
-
-🔁 3️⃣ Render Logic
-
-Tabs component me ye logic hota hai:
-
-{tabs.map(tab => {
-   if(tab.name === activeTab){
-       return tab.content
-   }
-   return null
-})}
-
-🧠 Meaning:
-Jo tab ka name == activeTab hoga
-Sirf uska content show hoga
-Baaki hidden
-
-*/

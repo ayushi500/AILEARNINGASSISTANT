@@ -111,35 +111,3 @@ const Flashcard = ({flashcard, onToggleStar}) => {
     
     }
 export default Flashcard
-
-/**
- * This Flashcard component:
-1️⃣ Shows a flashcard
-2️⃣ Has a front side (question) and back side (answer)
-3️⃣ Card flips when clicked
-4️⃣ User can Star / Unstar a flashcard
-5️⃣ Star button should NOT flip the card, so it has special handling
-
-1️⃣ isFlipped (STATE — Component Internal)
-This belongs only to this flashcard
-Controls whether card is showing front or back
-true → back shown
-false → front shown
-
-Backface hiding:
-backfaceVisibility: 'hidden'
-WebkitBackfaceVisibility: 'hidden'
-This prevents text from showing reversed.
-
-⭐ Star Button Important Trick
-This line is VERY IMPORTANT:
-e.stopPropagation()
-📌 Why?
-Whole card has onClick={handleFlip}
-If we click star → card would flip ❌
-But we DO NOT want that
-So we stop click from bubbling to parent div
-Result:
-⭐ Button click = ONLY star
-Card click = ONLY flip
- */

@@ -58,29 +58,11 @@ const documentSchema=new mongoose.Schema({
     timestamps:true
 })
 
-//Index for faster queries
 documentSchema.index({userId:1 , uploadDate:-1})
-// First filter by user
-// Then sort by latest uploaded document
-// This makes:
-// ✔ fetching user documents fast
-// ✔ showing recent documents fast
+
 
 
 const Document=mongoose.model('Document',documentSchema)
 
 export default Document
 
-
-// Chunks in your AI Learning Assistant app
-// 🔹 Why you NEED chunks
-
-// PDFs and documents can be:
-
-// Very long
-
-// Too big for AI models
-
-// Heavy for memory
-
-// So you split the text into chunks.

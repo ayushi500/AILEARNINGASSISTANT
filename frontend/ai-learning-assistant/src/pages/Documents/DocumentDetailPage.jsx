@@ -133,25 +133,3 @@ const DocumentDetailPage = () => {
 export default DocumentDetailPage
 
 
-/**
- * ✅ 2️⃣ iframe
-✔️ Dusra webpage / PDF / video same page ke andar hi embed karta hai
-✔️ Page change nahi hota
-✔️ “Website inside website” type
-
-✅ 1️⃣ href (<a> tag)
-✔️ Clicking par page change / redirect karta hai
-✔️ User ko dusre page / website par le jaata hai
-✔️ Current page se bahar nikal jate ho
-
-
-******************************************************
-
-noopener
-New tab window.opener ka access nahi le sakta
-➡️ Security fix 🔒
-
-noreferrer
-Referer header hide karta hai
-Matlab new site ko nahi pata chalta tum kis page se aaye
- */

@@ -195,29 +195,3 @@ const DashboardPage = () => {
 export default DashboardPage
 
 
-/** 
- * [
-  {
-    id: "doc1",
-    description: "AI Notes",
-    timestamp: "2025-01-21",
-    link: "/documents/doc1",
-    type: "document"
-  },
-  {
-    id: "doc2",
-    description: "Machine Learning PDF",
-    timestamp: "2025-01-19",
-    link: "/documents/doc2",
-    type: "document"
-  },
-  {
-    id: "quiz1",
-    description: "Python Quiz",
-    timestamp: "2025-01-20",
-    link: "/quizzes/quiz1",
-    type: "quiz"
-  }
-]
-
-*/

@@ -30,8 +30,8 @@ const DocumentCard = ({     //document → jisme file ka data hota hai (name, id
     }
 
     const handleDelete=(e)=>{
-        e.stopPropagation();   // card par click wala navigation na chale
-        onDelete(document)    // parent i.e onDelete ko bolo document delete karo
+        e.stopPropagation();  
+        onDelete(document)   
     }
   return  <div
            className='group relative bg-white/80 backdrop-blur-xl border border-slate-200/60 rounded-2xl p-5 hover:border-slate-300/60 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300 flex flex-col justify-between cursor-pointer hover:-translate-y-1'

@@ -229,20 +229,3 @@ export const deleteQuiz=async(req,res,next)=>{
 
 
 
-/**
- * const numbers = [10, 20, 30];
-
-const result = numbers.map((num, index) => {
-  return `Index ${index} has value ${num}`;
-});
-
-console.log(result);
-
-
-
-[
-  "Index 0 has value 10",
-  "Index 1 has value 20",
-  "Index 2 has value 30"
-]
- */

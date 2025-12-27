@@ -63,19 +63,3 @@ const authService={
 }
 
 export default authService
-
-/**
- * ✅ 6️⃣ Smart Error Handling
-throw error.response?.data || { message: "An unknown error occured" }
-Iska matlab:
-agar server ne proper error bheja:
-error.response.data
-to wo throw karo
-
-?. = optional chaining
-agar response exist nahi karta to crash nahi hoga
-Agar kuch bhi nahi mila
-to default ye send karo:
-{ message: "An unknown error occured" }
-Isse frontend ko hamesha meaningful message milta hai 👌
- */

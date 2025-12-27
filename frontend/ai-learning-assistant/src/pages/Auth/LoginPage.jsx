@@ -157,13 +157,4 @@ const LoginPage = () => {
 
 export default LoginPage
 
-/**
- * React me onFocus ek event hai jo tab trigger hota hai jab user kisi input field par click karta hai / cursor rakhta hai.
- * Email me:
-onFocus={() => setFocusedField('email')}
-onBlur={() => setFocusedField(null)}
-
-Meaning:
-Jab email box me cursor jayega → focusedField = "email"
-Jab bahar niklega → focusedField = null
- */
+/

@@ -28,9 +28,9 @@ const QuizCard = ({quiz,onDelete}) => {
             <div>
                 <h3
                   className='text-base font-semibold text-slate-900 mb-1 line-clamp-2'
-                  title={quiz.title}  //When you hover the mouse over the <h3> text, this text appears as a tooltip.
+                  title={quiz.title}  
                   >
-                   {quiz.title ||   //If quiz.title exists → show quiz.title, If quiz.title is empty / null / undefined → show fallback text
+                   {quiz.title ||   
                    `Quiz - ${moment(quiz.createdAt).format("MM D, YYYY")}`}
                   </h3>
                   <p className='text-xs font-medium text-slate-500 uppercase tracking-wide'>

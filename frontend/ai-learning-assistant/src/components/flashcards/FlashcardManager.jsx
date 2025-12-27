@@ -64,10 +64,10 @@ const FlashcardManager = ({documentId}) => {
 
   const handleNextCard=()=>{
     if(selectedSet){
-     handleReview(currentCardIndex)   //Next card me jane se pehle,maine current card ko review kr liya hai,ab main next card me jaungi
+     handleReview(currentCardIndex)  
     
      setCurrentCardIndex(
-      (prevIndex)=>(prevIndex+1) % selectedSet.cards.length  //this modulo is used for rotation,if we are in last index so on clicking next,we move to start
+      (prevIndex)=>(prevIndex+1) % selectedSet.cards.length  
     )
   }
   }

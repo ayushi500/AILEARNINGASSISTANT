@@ -46,15 +46,7 @@ export const getDashboard=async(req,res,next)=>{
         .populate('documentId','title')
         .select('title score totalQuestions completedAt');
 
-        /**
- documentId: {
-  _id: "abc123",
-  title: "Math Notes"
-}
-👉 Isse frontend ko pata chal jata hai:
-    Ye quiz kis document se related hai
-         */
-
+ 
 
         //Study streak {simplified -in production, track  daily activity}
         const studyStreak=Math.floor(Math.random() * 7)+1 //Mock data
@@ -84,21 +76,3 @@ export const getDashboard=async(req,res,next)=>{
         next(error)
     }
 }
-
-/**  quizzes.reduce((sum, q) => sum + q.score, 0)
- * 
- * const quizzes = [
-  { score: 60 },
-  { score: 80 },
-  { score: 100 }
-];
-
-
-| Step  | sum | q.score | result |
-| ----- | --- | ------- | ------ |
-| start | 0   | —       | 0      |
-| 1     | 0   | 60      | 60     |
-| 2     | 60  | 80      | 140    |
-| 3     | 140 | 100     | 240    |
-
- */

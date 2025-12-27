@@ -41,37 +41,3 @@ const Button=({
 
 }
 export default Button
-
-/**
- * Whatever is inside <Button> ... </Button>
-➡️ React automatically passes it as children.
-
-here children in the <Button> will be treated as an outlet
-jaisa bhi layout button ka hoga,waisa hi uskw children ko bhi mil jaayega
-
-<Button>
-  Save File
-</Button>
-
-The Button styling/layout remains same:
-rounded, green, padding, animation — sab same 🟢
-Only "Save File" ya icon change hota hai.
-
-<Button>
-  <Icon /> Upload File
-</Button>
-✔️ Whatever is inside <Button> ... </Button>
-➡️ React automatically passes it as children.
-here <Icon/> Upload file is children
-
-| Prop      | Meaning                                         |
-| --------- | ----------------------------------------------- |
-| children  | Button ke andar jo dikhega (text, icon, both)   |
-| onClick   | button click hone par kya kare                  |
-| type      | submit / button / reset                         |
-| disabled  | disable kare ya nahi                            |
-| ClassName | extra tailwind classes                          |
-| variant   | button ka style (primary / secondary / outline) |
-| size      | size (sm / md etc)                              |
-
- */

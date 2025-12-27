@@ -140,7 +140,7 @@ const DocumentListPage = () => {
      return(
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {documents?.map((doc)=>(
-          <DocumentCard    //Parent → Child data pass ho raha hai  ....  DocumentCard ke andar milega:  props.document
+          <DocumentCard    
             key={doc._id}
             document={doc}
             onDelete={handleDeleteRequest}
@@ -176,7 +176,7 @@ const DocumentListPage = () => {
             {renderContent()}
             </div>
 
-           {isUploadModalOpen && (   //isUploadModalOpen = false  =>false && <Modal />  => result = false  **** isUploadModalOpen = true  =>true && <Modal />  =>result = <Modal />
+           {isUploadModalOpen && (   
             <div className='fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm'>
               <div className='relative w-full max-w-lg bg-white/95 backdrop-blur-xl border border-slate-200/60 rounded-2xl shadow-slate-900/20 p-8'>
                 {/* Close Button */}
@@ -329,7 +329,7 @@ const DocumentListPage = () => {
 
                       <button
                         onClick={handleConfirmDelete}
-                        disabled={deleting}  //ek baar humne delete confirm kr diya to jb tk file delte ho rhi hai..to hum delete nhi kr skte use
+                        disabled={deleting}  
                         className='flex-1 h-11 px-4 bg-linear-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white text-sm font-semibold rounded rounded-xl transition-all duration-200 shadow-lg shadow-red-500/25 disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98]'
                         >
                           {deleting ? (
@@ -351,76 +351,3 @@ const DocumentListPage = () => {
 }
 
 export default DocumentListPage
-
-/**
- * 4️⃣ onDelete={handleDeleteRequest}
-
-Ye parent → child communication hai.
-
-Parent component = DocumentListPage
-Parent ka function = handleDeleteRequest
-Child = DocumentCard
-
-Parent child ko bol raha:
-
-agar delete button dabaya
-to mujhe bula lena
-main delete handle karunga
-
-
-
-***********************************************
-documents = [doc1, doc2, doc3]
-
-<div>
-  <DocumentCard doc1 />
-  <DocumentCard doc2 />
-  <DocumentCard doc3 />
-</div>
-
-
-**********************************************************
-<button
- type="submit"
- disabled={uploading}
->
- {uploading ? "Uploading..." : "Upload"}
-</button>
-
-
-
-Ye actual submit button hai
-type="submit" → form submit karta hai
-Jab upload chal raha hota hai:
-uploading = true
-→ Button disable ho jaata hai
-→ text ban jaata hai "Uploading..."
-
-So user baar-baar click nahi karega 👍
-
-
-*****************************************************
-FILE UPLOADING STEPS IN DB   
-
-✔️ 1️⃣ User selects PDF
-
-React input type="file" se user ek PDF choose karta hai.
-React state me store hota hai:
-
-const [uploadFile, setUploadFile] = useState(null);
-
-✔️ 2️⃣ React stores it (state me)
-
-React sirf file browser memory me rakhta hai, DB me nahi.
-Ab tak file backend tak nahi gayi hoti.
-
-
-Normal JSON se file nahi bhej sakte.
-Isliye FormData() use hota hai:
-✔️ User selects PDF
-✔️ React stores it
-✔️ FormData → backend(THROUGH AXIOS)as axios have content mutipart/form data
-✔️ Multer receives + saves (Multer ke through humara mutipart form data pdf me parse ho jaayega and then cloud me store kra lenge and so document uploaded successfully)
-✔️ DB me filename path save kar sakte ho
-✔️ Document uploaded 🎉
- */

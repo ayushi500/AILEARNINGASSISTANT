@@ -15,7 +15,3 @@ createRoot(document.getElementById('root')).render(
 )
 
 
-/**
- * Small popup notifications jo screen ke top/bottom par thodi der ke liye dikhte hain aur phir automatically hide ho jaate hain.
-Ye user ko quick feedback dene ke liye use hote hain – jaise success, error, warning, info messages.
- */

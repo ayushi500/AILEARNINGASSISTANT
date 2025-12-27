@@ -4,7 +4,7 @@ import Header from './Header'
 
 const AppLayout = ({children}) => {
 
-  const [isSidebarOpen,setIsSidebarOpen]=useState(false)  //setIsSidebarOpen wo function hai jo isSidebarOpen ki value ko update / change karta hai.
+  const [isSidebarOpen,setIsSidebarOpen]=useState(false)  
 
   const toggleSidebar=()=>{
     setIsSidebarOpen(!isSidebarOpen)
